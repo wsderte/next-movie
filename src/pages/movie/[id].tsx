@@ -5,8 +5,8 @@ import router, { useRouter } from 'next/router'
 import { Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-export const getServerSideProps = async (context: any) => {
-    const id = context.params.id
+export const getServerSideProps = async ({ params }: any) => {
+    const id = params.id
     console.log(id, ' CONTEXT ')
     const res = await fetch('http://localhost:3000/api/getById', {
         method: 'POST',
