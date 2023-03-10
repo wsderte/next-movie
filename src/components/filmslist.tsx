@@ -11,7 +11,7 @@ export default function FilmsList({ filter }: IFilmList) {
 
     useEffect(() => {
         const fetchFilms = async () => {
-            const res = await fetch('http://localhost:3000/api/getSearchData', {
+            const res = await fetch('/api/getSearchData', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

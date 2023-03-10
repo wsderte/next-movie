@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export const getServerSideProps = async (context: any) => {
     const id = context.params.id
     console.log(id, ' CONTEXT ')
-    const res = await fetch('http://localhost:3000/api/getById', {
+    const res = await fetch('/api/getById', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
