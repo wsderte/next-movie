@@ -1,0 +1,113 @@
+.movie{
+    height: 100vh;
+    width: 100vw;
+    padding: 6vh;
+}
+
+.backImage{
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: skewY(-3deg);
+    transform-origin: 0 0;
+    background: rgb(55, 102, 145);
+}
+
+.movieWrap{
+    padding-top: 16vh;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    background: inherit;
+    display: flex;
+    gap: 40px;
+}
+
+.movieRatings{
+    text-align: center;
+    position: relative;
+    font-family: "Hind", sans-serif;
+    color: white;
+    margin-top: 10px;
+    background: rgb(55, 102, 145);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 
+        inset -10px 11px 8px -10px #acbdce,
+        inset 10px -11px 8px -10px #acbdce; 
+}
+
+
+.movieRight{
+    width: 620px;
+    min-width: 300px;
+    padding-bottom: 20px;
+    line-height: 1.4;
+}
+
+.movieTitle{
+    font-family: "Hind", sans-serif;
+    display: block;
+    /* color: #acbdce; */
+    margin-top: 10px;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 13px;
+}
+
+.movieEdition{
+    font-family: "Hind", sans-serif;
+    display: block;
+    color: #acbdce;
+    margin-top: 10px;
+}
+
+.movieActors{
+    font-family: "Hind", sans-serif;
+    display: block;
+    color: #acbdce;
+    margin-top: 10px;
+}
+
+.moviePlot{
+    font-family: "Hind", sans-serif;
+    display: block;
+    color: #acbdce;
+    margin-top: 5px;
+}
+
+.movieGenre{
+    font-family: "Hind", sans-serif;
+    display: block;
+    color: #acbdce;
+    margin-top: 10px;
+}
+
+.button{
+    margin-top: 20px;
+}
+
+
+@media (max-width: 674px){
+    .movieWrap{
+        flex-direction: column;
+    }
+    .movieLeft{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+    }
+    .movieRatings{
+        width: 320px;
+        
+    }
+    .movieTitle{
+        color: #acbdce
+    }
+}
