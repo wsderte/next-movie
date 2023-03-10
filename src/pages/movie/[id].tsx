@@ -45,8 +45,6 @@ export const getServerSideProps = async (context: any) => {
 //     Type: 'movie',
 // }
 
-// props: any
-//more information about that movie, such as plot, actors, and ratings.
 export default function MoviePage(props: any) {
     // console.log(props)
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {}
@@ -64,7 +62,7 @@ export default function MoviePage(props: any) {
                         className={styles.movieImage}
                     />
                     {props?.Ratings
-                        ? props.Ratings.map((rate) => (
+                        ? props.Ratings.map((rate: any) => (
                               <div
                                   className={styles.movieRatings}
                                   key={rate.Source}
