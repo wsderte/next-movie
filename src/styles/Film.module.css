@@ -17,8 +17,13 @@
     background: rgb(55, 102, 145);
 }
 
+.movieLeft{
+    min-height: 622px;
+}
+
 .movieWrap{
     padding-top: 16vh;
+    padding-bottom: 4vh;
     justify-content: center;
     position: relative;
     z-index: 2;
@@ -55,7 +60,7 @@
     display: block;
     /* color: #acbdce; */
     margin-top: 10px;
-    color: white;
+    color: rgb(108, 158, 249);
     font-size: 40px;
     margin-bottom: 13px;
 }
