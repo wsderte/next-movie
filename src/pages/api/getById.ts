@@ -20,7 +20,7 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<IData>
 ) {
-    const API = `http://www.omdbapi.com/?i=${req.body}&apikey=c894dff5`
+    const API: string = `http://www.omdbapi.com/?i=${req.body}&apikey=c894dff5`
 
     const films: ISearch = await fetch(API)
         .then((response) => {

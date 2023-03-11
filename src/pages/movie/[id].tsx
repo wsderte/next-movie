@@ -6,9 +6,9 @@ import { useDispatch } from 'react-redux'
 import { setItemInCart } from '../../redux/cart/reducer'
 
 export const getServerSideProps = async ({ params }: any) => {
-    const id = params.id
+    const id: string = params.id
 
-    const API = `http://www.omdbapi.com/?i=${id}&apikey=c894dff5`
+    const API: string = `http://www.omdbapi.com/?i=${id}&apikey=c894dff5`
     const res: any = await fetch(API)
         .then((response) => {
             return response.json()
@@ -27,7 +27,8 @@ export const getServerSideProps = async ({ params }: any) => {
 
 export default function MoviePage(props: any) {
     const dispatch = useDispatch()
-    const handleClick = ({ movie }: any): void => {
+    const handleClick = (movie: any): void => {
+        console.log(movie)
         dispatch(setItemInCart(movie))
     }
 

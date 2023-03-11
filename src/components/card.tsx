@@ -7,6 +7,7 @@ export default function Card({ films }: any) {
         console.log(id, 'click')
         router.push('/movie/' + id)
     }
+
     return (
         <>
             <div

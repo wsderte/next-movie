@@ -8,7 +8,7 @@ interface IFilter {
 }
 
 export default function Filter({ setFilter }: IFilter) {
-    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setFilter(e.target.value)
     }
 

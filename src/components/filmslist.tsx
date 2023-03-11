@@ -8,6 +8,7 @@ interface IFilmList {
 
 export default function FilmsList({ filter }: IFilmList) {
     const [films, setFilms] = useState<any>([])
+    const [err, setErr] = useState<boolean>(true)
 
     useEffect(() => {
         const fetchFilms = async () => {
@@ -27,6 +28,9 @@ export default function FilmsList({ filter }: IFilmList) {
                 .then((data) => {
                     setFilms(data.films.Search)
                     console.log(data.films.Search)
+                    data.films.Search == undefined
+                        ? setErr(true)
+                        : setErr(false)
                 })
         }, 400)
 
@@ -35,6 +39,11 @@ export default function FilmsList({ filter }: IFilmList) {
 
     return (
         <div className={styles.films}>
+            {err ? (
+                <div className={styles.errorText}>
+                    {"Sorry, I couldn't find a film with this title."}
+                </div>
+            ) : null}
             <div className={styles.filmsWrap}>
                 {films
                     ? films.map((film: any) => (
