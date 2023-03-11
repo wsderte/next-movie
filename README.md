@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Versel link
 
-https://next-movie-liart.vercel.app/movie/tt1132626
+https://next-movie-liart.vercel.app/
 
 ## Getting Started
 
