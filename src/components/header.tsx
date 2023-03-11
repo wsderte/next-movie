@@ -3,9 +3,10 @@ import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 import { BsCartCheck } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
+import { IFilm } from '@/interface/film.interface'
 
 interface GamesState {
-    itemsInCart: any[]
+    itemsInCart: IFilm[]
 }
 
 interface CartState {
@@ -13,7 +14,9 @@ interface CartState {
 }
 
 const Header: React.FC = () => {
-    let items: any[] = useSelector((state: CartState) => state.cart.itemsInCart)
+    let items: IFilm[] = useSelector(
+        (state: CartState) => state.cart.itemsInCart
+    )
 
     return (
         <div className={styles.headerWrap}>

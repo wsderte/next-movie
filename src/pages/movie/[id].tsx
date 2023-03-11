@@ -4,12 +4,13 @@ import { Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useDispatch } from 'react-redux'
 import { setItemInCart } from '../../redux/cart/reducer'
+import { IFilm, IRating } from '@/interface/film.interface'
 
 export const getServerSideProps = async ({ params }: any) => {
     const id: string = params.id
 
     const API: string = `http://www.omdbapi.com/?i=${id}&apikey=c894dff5`
-    const res: any = await fetch(API)
+    const res: IFilm = await fetch(API)
         .then((response) => {
             return response.json()
         })
@@ -25,9 +26,9 @@ export const getServerSideProps = async ({ params }: any) => {
     }
 }
 
-export default function MoviePage(props: any) {
+export default function MoviePage(props: IFilm) {
     const dispatch = useDispatch()
-    const handleClick = (movie: any): void => {
+    const handleClick = (movie: IFilm): void => {
         console.log(movie)
         dispatch(setItemInCart(movie))
     }
@@ -45,7 +46,7 @@ export default function MoviePage(props: any) {
                         className={styles.movieImage}
                     />
                     {props?.Ratings
-                        ? props.Ratings.map((rate: any) => (
+                        ? props.Ratings.map((rate: IRating) => (
                               <div
                                   className={styles.movieRatings}
                                   key={rate.Source}

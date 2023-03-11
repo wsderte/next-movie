@@ -1,8 +1,14 @@
 import Image from 'next/image'
 import styles from '@/styles/Card.module.css'
 import router from 'next/router'
+import { IFilm } from '@/interface/film.interface'
 
-export default function Card({ films }: any) {
+interface ICard {
+    key: string
+    films: IFilm
+}
+
+export default function Card({ films }: ICard) {
     const handleClick = (id: string): void => {
         console.log(id, 'click')
         router.push('/movie/' + id)

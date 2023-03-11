@@ -1,4 +1,5 @@
 const { createSlice } = require('@reduxjs/toolkit')
+import { IFilm } from '@/interface/film.interface'
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -7,8 +8,8 @@ const cartSlice = createSlice({
     },
     reducers: {
         setItemInCart: (
-            state: { itemsInCart: any[] },
-            action: { payload: any }
+            state: { itemsInCart: IFilm[] },
+            action: { payload: IFilm }
         ) => {
             state.itemsInCart.push(action.payload)
         },
