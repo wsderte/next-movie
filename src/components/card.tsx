@@ -21,13 +21,22 @@ export default function Card({ films }: ICard) {
                 onClick={() => handleClick(films.imdbID)}
             >
                 <div className={styles.cardsWrap}>
-                    <Image
-                        src={films.Poster}
-                        alt={''}
-                        width={120}
-                        height={160}
-                        className={styles.cardsImage}
-                    />
+                    {films.Poster !== 'N/A' ? (
+                        <Image
+                            src={films.Poster}
+                            alt={''}
+                            width={120}
+                            height={160}
+                            className={styles.cardsImage}
+                        />
+                    ) : null}
+                    {/*  <Image */}
+                    {/*      src={films.Poster}
+                         alt={''}
+                         width={120}
+                         height={160}
+                         className={styles.cardsImage}
+                     /> */}
 
                     <div className={styles.cardsText}>
                         <div className={styles.Title}> {films.Title}</div>

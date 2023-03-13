@@ -38,13 +38,15 @@ export default function MoviePage(props: IFilm) {
             <div className={styles.backImage}></div>
             <div className={styles.movieWrap}>
                 <div className={styles.movieLeft}>
-                    <Image
-                        src={props.Poster}
-                        alt={''}
-                        width={320}
-                        height={460}
-                        className={styles.movieImage}
-                    />
+                    {props.Poster !== 'N/A' ? (
+                        <Image
+                            src={props.Poster}
+                            alt={''}
+                            width={320}
+                            height={460}
+                            className={styles.movieImage}
+                        />
+                    ) : null}
                     {props?.Ratings
                         ? props.Ratings.map((rate: IRating) => (
                               <div
