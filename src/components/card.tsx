@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styles from '@/styles/Card.module.css'
 import router from 'next/router'
 import { IFilm } from '@/interface/film.interface'
+import Link from 'next/link'
 
 interface ICard {
     key: string
@@ -9,16 +10,17 @@ interface ICard {
 }
 
 export default function Card({ films }: ICard) {
-    const handleClick = (id: string): void => {
-        console.log(id, 'click')
-        router.push('/movie/' + id)
-    }
+    // const handleClick = (id: string): void => {
+    //     console.log(id, 'click')
+    //     router.push('/movie/' + id)
+    // }
 
     return (
         <>
-            <div
+            <Link
+                href={'/movie/' + films.imdbID}
                 className={styles.cards}
-                onClick={() => handleClick(films.imdbID)}
+                // onClick={() => handleClick(films.imdbID)}
             >
                 <div className={styles.cardsWrap}>
                     {films.Poster !== 'N/A' ? (
@@ -45,7 +47,7 @@ export default function Card({ films }: ICard) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </>
     )
 }
